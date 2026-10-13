@@ -1,56 +1,87 @@
-import PressToContinue
 import random
-import EnemyEncounter
+
+def PressToContinue():
+    return input("Press Enter to continue...")
+
+def EnemyEncounter(money):
+    print("You hear the rustling of leaves and the distant calls of unknown creatures.")
+    PressToContinue()
+
+    print("Pearbook: ALERT! You encounter an enemy in the forest!")
+    PressToContinue()
+
+    choice = input("Pearbook: What will you do? \n1) Fight\n2) Run away!")
+
+    if choice == "1":
+        print("Pearbook: You chose to fight the enemy!")
+        WinChance = random.choice([1, 2])
+        if WinChance == 1:
+            print("Pearbook: You win the battle!")
+            money += random.randint(1, 8)
+            print(f"Pearbook: You now have ${money}.")
+        else:
+            print("Pearbook: You lose the battle!")
+            money -= random.randint(1, 5)
+            print(f"Pearbook: You now have ${money}.")
+    else:
+        print("Pearbook: You chose to run away from the enemy!")
+        PressToContinue()
+        print("Pearbook: You successfully escaped from the battle! but you tripped and fell and lost some money.")
+        money -= random.randint(1, 10)
+        print(f"Pearbook: You now have ${money}.")
+        PressToContinue()
+
+    return money
 
 
 money = 25
 def StartingScene():
     print("You hear your alarm go off.")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("its 7:10 AM\nThe big day is finally here.\nDr. Oc is preparing the Pythonmons this second!")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("You dont want to miss out! Especially for this one time event!")
-    PressToContinue.PressToContinue()
+    PressToContinue()
 
     print("You get ready and rush out the door while your mom gets your breakfest ready")
-    PressToContinue.PressToContinue()
+    PressToContinue()
 
     print("You head to the pythonmon observatory lab")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("Along the way you notice the whole road filled with people cheering and walking to the same observatory")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("You finally reach the observatory, the crowd buzzing with excitement")
-    PressToContinue.PressToContinue()
+    PressToContinue()
 
     print("You show the entrance man your ticket and he nods, letting you through")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("You step inside the observatory, the grandeur of the place taking your breath away")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("You notice a group of children playing with their Pythonmons, the sound of their laughter echoing through the hall")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("You feel a mix of excitement and anticipation as you approach the main stage, where you expect Dr. Oc to be preparing the Pythonmons")
-    PressToContinue.PressToContinue()
+    PressToContinue()
 
     print("However when you get there you realize-")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("No one but Dr. Oc is present on the stage, wrapping up on the preparations")
-    PressToContinue.PressToContinue()
+    PressToContinue()
 
     print("You feel a mix of confusion and disappointment as you try to process the situation")
-    PressToContinue.PressToContinue()
+    PressToContinue()
 
     print("Dr. Oc: \"Ah, you're finally here. I was wondering when you'd arrive.\"")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("Dr. Oc: \"But I must say, you're a bit late.\"")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("Dr. Oc: \"All of our Pythonmons have been already claimed.\"")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("Dr. Oc: \"However we do have this prototype one left, he is extremely hostile to anyone.\"")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("Dr. Oc: \"Are you sure you want to claim, it...?\"")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("You hesitate for a moment, weighing the risks and the flex of claiming the risky Pythonmon")
-    PressToContinue.PressToContinue()
+    PressToContinue()
 
 
     Choice1 = input("Do you really want to claim the Pythonmon? (yes/no): ").lower()
@@ -70,50 +101,50 @@ def StartingScene():
     print("+1 Pythonmon gained, species R A T\nbehaviors, hostile, curious, abnormal.\nCombat Skills: B+ - A\nCodeName: Pythachu")
 
     print("Dr. Oc: \"Congratulations on your first Pythonmon!\"")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("Dr. Oc: \"I trust you will take good care of it.\"")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("Dr. Oc: \"Good luck on your journey!\"")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("Dr. Oc: \"And Remember to use your School PearBook wisely!\"")
     print("You leave the observatory with your new Pythonmon, feeling a mix of pride and responsibility!")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("As you step outside, you start to embark on your brand new journey with your new Pythonmon by your side.")
-    PressToContinue.PressToContinue()
+    PressToContinue()
 
 StartingScene()
 
 
 print("Pearbook: You are now walking inside the vast forest of herestia...")
-PressToContinue.PressToContinue()
+PressToContinue()
 
 print("Pearbook: Remember player, our main goal right now is to find the city bus stop and head for the city.\n then we can get started on fighting other Pythonmon Trainers!")
-PressToContinue.PressToContinue()
+PressToContinue()
 
-money = EnemyEncounter.EnemyEncounter(money)
+money = EnemyEncounter(money)
 
 print("You continue walking down the forest, looking for any pathways")
 
-money = EnemyEncounter.EnemyEncounter(money)
+money = EnemyEncounter(money)
 
 print("You finally start seeing some sort of cobblestone in the near distance")
-PressToContinue.PressToContinue()
+PressToContinue()
 print("Pearbook: You are getting closer to the city bus stop!")
-PressToContinue.PressToContinue()
+PressToContinue()
 
-money = EnemyEncounter.EnemyEncounter(money)
+money = EnemyEncounter(money)
 
 print("You finally reach the city bus stop!")
-PressToContinue.PressToContinue()
+PressToContinue()
 print("Pearbook: Oh no! to your right there is an enemy in that bush I hear!")
 
-money = EnemyEncounter.EnemyEncounter(money)
+money = EnemyEncounter(money)
 
 print("Pearbook: Finally we have made it perfectly on time to the city bus stop!")
-PressToContinue.PressToContinue()
+PressToContinue()
 
 print("Bus Driver: \"Welcome to the city bus! Please pay your fare and enjoy the ride.\"")
-PressToContinue.PressToContinue()
+PressToContinue()
 print("The Fare for the city bus is $10.")
 if money >= 10:
     print("You pay the fare and board the city bus.")
@@ -121,7 +152,7 @@ if money >= 10:
 
 else:
     print("Pearbook: You do not have enough money to pay the fare. You cannot board the city bus.")
-    PressToContinue.PressToContinue()
+    PressToContinue()
     print("Game over, you cannot continue your pythonmon journey... :(")
     exit()
 
